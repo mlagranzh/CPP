@@ -1,8 +1,8 @@
-NAME		=	megaphone
-HEADER		=	Account.hpp
+NAME		=	PhoneBook
+HEADER		=	PhoneBook.hpp
 
-GCC			=	c++ -Wall -Wextra -Werror 
-SRCS		=	Megaphone.cpp
+GCC			=	g++ -Wall -Wextra -Werror 
+SRCS		=	PhoneBook.cpp
 OBJ			=	$(SRCS:.c=.o)
 
 all: $(NAME)
