@@ -1,20 +1,17 @@
 NAME		=	megaphone
-HEADER		=	Account.hpp
 
-GCC			=	c++ -Wall -Wextra -Werror 
+CPP			=	c++ -Wall -Wextra -Werror 
 SRCS		=	Megaphone.cpp
 OBJ			=	$(SRCS:.c=.o)
 
 all: $(NAME)
 
-%.o: %.c $(HEADER)
-	$(GCC) -I $(HEADER) -c $< -o $@
+%.o: %.cpp 
+	$(CPP) -c $< -o $@
 
-$(NAME): $(OBJ) $(HEADER) MAKEFILE
+$(NAME): $(OBJ) MAKEFILE
 	@echo "\033[0;35mСоздаю исполняемый файл...\033[0;32m"
-	@$(GCC) -o $(NAME) $(OBJ)
-#	@echo "DONE! Запускаю..."
-#	@./minishell
+	@$(CPP) -o $(NAME) $(OBJ)
 
 clean:
 	@echo "\033[0;35mУдаляю объектные файлы...\033[0;31m"

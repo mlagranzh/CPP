@@ -1,8 +1,8 @@
-NAME		=	PhoneBook
-HEADER		=	PhoneBook.hpp
+NAME		=	Account
+HEADER		=	Account.hpp
 
 CPP			=	c++ -Wall -Wextra -Werror -std=c++98
-SRCS		=	PhoneBook.cpp
+SRCS		=	Account.cpp tests.cpp
 OBJ			=	$(SRCS:.cpp=.o)
 
 all: $(NAME)
