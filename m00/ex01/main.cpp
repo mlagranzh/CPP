@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 21:07:05 by celys             #+#    #+#             */
-/*   Updated: 2021/12/04 21:07:06 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/06 19:31:18 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main()
         {
             i++;
             PhoneBook.add(i%8);
-            PhoneBook.contact[i%8].index = i%8;
+            PhoneBook.contact[i%8].set_index(i%8);
             std::cout << "SUCCSESS!" << std::endl;
         }
         else if (command == "SEARCH")
@@ -37,7 +37,7 @@ int main()
             std::cout << std::setw(10) << "first name" << "|";
             std::cout << std::setw(10) << "last name"<< "|";
             std::cout << std::setw(10) << "nickname" << "|" << std::endl;
-            for (int j = 0; j < 4 && !PhoneBook.contact[j].first_name.empty(); j++)
+            for (int j = 0; j < 4 && !PhoneBook.contact[j].get_first_name().empty(); j++)
                 PhoneBook.summary_print(j);
             std::cout << "Enter a INDEX: ";
             while (!(std::cin >> index))

@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/04 19:22:58 by celys             #+#    #+#             */
-/*   Updated: 2021/12/06 19:18:23 by celys            ###   ########.fr       */
+/*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
+/*   Updated: 2021/12/10 10:34:23 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef KAREN_HPP
+# define KAREN_HPP
 
-#include "Contact.hpp"
-#include <iomanip>
+#include <iostream>
 
-class PhoneBook
+class Karen
 {
-   public:
-      Contact	contact[8];
-      void	add(int i);
-      void	search(int i);
-      std::string	rewrite_string(std::string str);
-      void	summary_print(int i);
+    private:
+        std::string name;
+        void debug(void);
+        void info(void);
+        void warning(void);
+        void error(void);
+    public:
+        void complain(std::string level);
+        // Karen(void);
+        // ~Karen(void);
 };
 
 #endif

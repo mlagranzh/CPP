@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/04 19:22:58 by celys             #+#    #+#             */
-/*   Updated: 2021/12/06 19:18:23 by celys            ###   ########.fr       */
+/*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
+/*   Updated: 2021/12/10 04:08:16 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "Weapon.hpp"
 
-#include "Contact.hpp"
-#include <iomanip>
-
-class PhoneBook
+const std::string &Weapon::getType(void)
 {
-   public:
-      Contact	contact[8];
-      void	add(int i);
-      void	search(int i);
-      std::string	rewrite_string(std::string str);
-      void	summary_print(int i);
-};
+    return (this->type);
+}
 
-#endif
+void Weapon::setType(std::string type)
+{
+    this->type = type;
+}
+
+Weapon::Weapon(std::string type)
+{
+    this->type = type;
+}
+
+Weapon::Weapon()
+{
+    
+}

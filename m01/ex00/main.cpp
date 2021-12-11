@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/04 19:22:58 by celys             #+#    #+#             */
-/*   Updated: 2021/12/06 19:18:23 by celys            ###   ########.fr       */
+/*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
+/*   Updated: 2021/12/10 01:43:50 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "Zombie.hpp"
 
-#include "Contact.hpp"
-#include <iomanip>
-
-class PhoneBook
+int main()
 {
-   public:
-      Contact	contact[8];
-      void	add(int i);
-      void	search(int i);
-      std::string	rewrite_string(std::string str);
-      void	summary_print(int i);
-};
+    Zombie my_Zombie_stack;
+    my_Zombie_stack.set_name("Zombie on stack");
+    my_Zombie_stack.announce();
 
-#endif
+    Zombie *my_Zombie_heap;
+    my_Zombie_heap = newZombie("Zombie on heap");
+    my_Zombie_heap->announce();
+    delete my_Zombie_heap;
+    
+    randomChump("Zombie from randomChump on stack");
+}

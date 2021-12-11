@@ -6,73 +6,68 @@
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 21:08:46 by celys             #+#    #+#             */
-/*   Updated: 2021/12/04 21:11:55 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/06 19:31:16 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
-int Contact::count = 0;
-
-int	Contact::Get_id(void)
+int	Contact::get_index(void)
 {
-	return(id);
+	return(this->index);
 }
 
-bool	Contact::GetFlag(void)
-{
-	return(flag);
-}
-
-int	Contact::Get_count(void)
-{
-	return(count);
-}
-
-std::string	Contact::Get_first_name(void)
+std::string	Contact::get_first_name(void)
 {
 	return (this->first_name);
 }
 
-std::string	Contact::Get_last_name(void)
+std::string	Contact::get_last_name(void)
 {
 	return (this->last_name);
 }
 
-std::string	Contact::Get_nickname(void)
+std::string	Contact::get_nickname(void)
 {
 	return (this->nickname);
 }
 
-void	Contact::GetInfo(void)
+std::string	Contact::get_phone_number(void)
 {
-	std::cout << "----------" << std::endl;
-	std::cout << first_name << std::endl;
-	std::cout << last_name << std::endl;
-	std::cout << nickname << std::endl;
-	std::cout << phone_number << std::endl;
-	std::cout << darkest_secret << std::endl;
-	std::cout << "----------" << std::endl;
+	return (this->phone_number);
 }
 
-void	Contact::SetInfo(void)
+std::string	Contact::get_darkest_secret(void)
 {
-	std::string str;
+	return (this->darkest_secret);
+}
 
-	std::cout << "First name: ";
-	std::cin >> str;
-	first_name = str;
-	std::cout << "Last name: ";
-	std::cin >> str;
-	last_name = str;
-	std::cout << "Nickname: ";
-	std::cin >> str;
-	nickname = str;
-	std::cout << "Phone number: ";
-	std::cin >> str;
-	phone_number = str;
-	std::cout << "Darkest secret: ";
-	std::cin >> str;
-	darkest_secret = str;
-	flag = true;
+void	Contact::set_first_name(void)
+{
+   std::cin >> this->first_name;
+}
+
+void	Contact::set_last_name(void)
+{
+   std::cin >> this->last_name;
+}
+
+void	Contact::set_nickname(void)
+{
+   std::cin >> this->nickname;
+}
+
+void	Contact::set_phone_number(void)
+{
+   std::cin >> this->phone_number;
+}
+
+void	Contact::set_darkest_secret(void)
+{
+   std::cin >> this->darkest_secret;
+}
+
+void	Contact::set_index(int i)
+{
+   this->index = i;
 }

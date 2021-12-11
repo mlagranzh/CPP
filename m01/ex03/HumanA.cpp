@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/04 19:22:58 by celys             #+#    #+#             */
-/*   Updated: 2021/12/06 19:18:23 by celys            ###   ########.fr       */
+/*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
+/*   Updated: 2021/12/10 04:07:28 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "HumanA.hpp"
 
-#include "Contact.hpp"
-#include <iomanip>
+// HumanA::HumanA()
+// {
+    
+// }
 
-class PhoneBook
+void HumanA::attack()
 {
-   public:
-      Contact	contact[8];
-      void	add(int i);
-      void	search(int i);
-      std::string	rewrite_string(std::string str);
-      void	summary_print(int i);
-};
+    std::cout << this -> name << " attacks with his " << this -> weapon.getType() << std::endl;
+}
 
-#endif
+std::string HumanA::get_name()
+{
+    return (this->name);
+}
+
+void HumanA::set_name(std::string str)
+{
+    this->name = str;
+}
+
+
+HumanA::HumanA(std::string name, Weapon &weapon) :weapon(weapon)
+{
+    this->name = name;
+}

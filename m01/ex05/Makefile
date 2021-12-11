@@ -1,17 +1,18 @@
-NAME		=	megaphone
+NAME		=	Karen
+HEADER		=	Karen.hpp
 
 CPP			=	c++ -Wall -Wextra -Werror -std=c++98
-SRCS		=	Megaphone.cpp
+SRCS		=	main.cpp Karen.cpp
 OBJ			=	$(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-%.o: %.cpp 
-	$(CPP) -c $< -o $@
+.cpp.o :
+	${CPP} -c $< -o ${<:.cpp=.o}
 
-$(NAME): $(OBJ) MAKEFILE
+$(NAME): $(OBJ) $(HEADER) MAKEFILE
 	@echo "\033[0;35mСоздаю исполняемый файл...\033[0;32m"
-	@$(CPP) $(OBJ) -o $(NAME)
+	@$(CPP) -o $(NAME) $(OBJ)
 
 clean:
 	@echo "\033[0;35mУдаляю объектные файлы...\033[0;31m"
