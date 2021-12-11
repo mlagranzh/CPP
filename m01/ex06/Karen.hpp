@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
-/*   Updated: 2021/12/10 10:35:11 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/11 14:08:08 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ class Karen
         void error(void);
     public:
         void complain(std::string level);
-        // Karen(void);
-        // ~Karen(void);
 };
 
 #endif

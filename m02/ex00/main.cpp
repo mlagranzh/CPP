@@ -6,18 +6,22 @@
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/11 14:00:21 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/10 01:43:50 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "Zombie.hpp"
 
-int main(int argc, char **argv)
+int main()
 {
-    Karen karen;
+    Zombie my_Zombie_stack;
+    my_Zombie_stack.set_name("Zombie on stack");
+    my_Zombie_stack.announce();
 
-    karen.complain("DEBUG");
-    karen.complain("INFO");
-    karen.complain("WARNING");
-    karen.complain("ERROR");
+    Zombie *my_Zombie_heap;
+    my_Zombie_heap = newZombie("Zombie on heap");
+    my_Zombie_heap->announce();
+    delete my_Zombie_heap;
+    
+    randomChump("Zombie from randomChump on stack");
 }

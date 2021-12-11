@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/11 14:00:21 by celys            ###   ########.fr       */
+/*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
+/*   Updated: 2021/12/10 01:38:28 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "Zombie.hpp"
 
-int main(int argc, char **argv)
+Zombie* newZombie(std::string name)
 {
-    Karen karen;
+    Zombie *new_Zombie;
 
-    karen.complain("DEBUG");
-    karen.complain("INFO");
-    karen.complain("WARNING");
-    karen.complain("ERROR");
+    new_Zombie = new Zombie;
+    new_Zombie -> set_name(name);
+    return (new_Zombie);
 }

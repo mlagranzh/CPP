@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/11 14:00:21 by celys            ###   ########.fr       */
+/*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
+/*   Updated: 2021/12/10 04:12:03 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "HumanB.hpp"
 
-int main(int argc, char **argv)
+void HumanB::attack()
 {
-    Karen karen;
+    std::cout << this -> name << " attacks with his " << this -> weapon->getType() << std::endl;
+}
 
-    karen.complain("DEBUG");
-    karen.complain("INFO");
-    karen.complain("WARNING");
-    karen.complain("ERROR");
+std::string HumanB::get_name()
+{
+    return (this->name);
+}
+
+void HumanB::set_name(std::string str)
+{
+    this->name = str;
+}
+
+HumanB::HumanB(std::string name)
+{
+    this->name = name;
+}
+
+void HumanB::setWeapon(Weapon &weapon)
+{
+    this->weapon = &weapon;
 }

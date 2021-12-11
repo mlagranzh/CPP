@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
-/*   Updated: 2021/12/11 14:07:05 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/10 07:39:49 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void Karen::error(void)
 void Karen::complain(std::string level)
 {
     void (Karen::*functions[4])() = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
-    std::string array[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    std::string array[4] = {"debug", "info", "warning", "error"};
     std::string *result= std::find(std::begin(array), std::end(array), level);
-    (this->*functions[std::distance(array, result)])();
+    (this->*functions[std::distance(array, result)])(); //why???
 }

@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/11 14:00:21 by celys            ###   ########.fr       */
+/*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
+/*   Updated: 2021/12/10 04:05:18 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-int main(int argc, char **argv)
+#include "Weapon.hpp"
+
+class HumanA
 {
-    Karen karen;
+    private:
+        std::string name;
+        Weapon &weapon;
+    public:
+        // HumanA();
+        HumanA(std::string name, Weapon &weapon);
+        std::string get_name();
+        void set_name(std::string str);
+        void attack(void);
+};
 
-    karen.complain("DEBUG");
-    karen.complain("INFO");
-    karen.complain("WARNING");
-    karen.complain("ERROR");
-}
+#endif
