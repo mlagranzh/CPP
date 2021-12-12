@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/10 02:52:50 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/11 15:48:28 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,7 @@ int main()
     
     std::cout << "string using PTR: " << *stringPTR << std::endl;
     std::cout << "string using REF: " << stringREF << std::endl;
+
+    stringREF = "dfdfgfdgfddfgdfgfd";
+    std::cout << "string using REF: " << &my_str << std::endl;
 }

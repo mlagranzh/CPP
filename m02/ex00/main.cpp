@@ -6,22 +6,23 @@
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/10 01:43:50 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/12 06:49:18 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Fixed.hpp"
 
-int main()
+int main(void) 
 {
-    Zombie my_Zombie_stack;
-    my_Zombie_stack.set_name("Zombie on stack");
-    my_Zombie_stack.announce();
+    Fixed a;
+    Fixed b( a );
+    Fixed c;
 
-    Zombie *my_Zombie_heap;
-    my_Zombie_heap = newZombie("Zombie on heap");
-    my_Zombie_heap->announce();
-    delete my_Zombie_heap;
-    
-    randomChump("Zombie from randomChump on stack");
+    c = b;
+
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
+
+    return 0;
 }

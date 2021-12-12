@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
-/*   Updated: 2021/12/10 04:05:18 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/12 13:37:55 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-#include "Weapon.hpp"
+#include <iostream>
 
-class HumanA
+class Fixed
 {
     private:
-        std::string name;
-        Weapon &weapon;
+        int fixed_point_val;
+        static const int number_fractional_bits = 8;
+
     public:
-        // HumanA();
-        HumanA(std::string name, Weapon &weapon);
-        std::string get_name();
-        void set_name(std::string str);
-        void attack(void);
+        Fixed();
+        ~Fixed();
+        Fixed(const Fixed &fixed);
+        Fixed(const int value);
+        Fixed(const float value);
+        Fixed& operator=(const Fixed &fixed);
+        int getRawBits(void) const;
+        void setRawBits(int const raw);
+        float toFloat(void) const;
+        int toInt(void) const;
+        friend std::ostream& operator<< (std::ostream &out, const Fixed &fixed);
 };
 
 #endif

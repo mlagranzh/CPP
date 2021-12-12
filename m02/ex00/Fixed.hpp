@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
-/*   Updated: 2021/12/10 04:08:16 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/12 10:39:35 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-const std::string &Weapon::getType(void)
-{
-    return (this->type);
-}
+#include <iostream>
 
-void Weapon::setType(std::string type)
+class Fixed
 {
-    this->type = type;
-}
+    private:
+        int fixed_point_val;
+        static const int number_fractional_bits = 8;
 
-Weapon::Weapon(std::string type)
-{
-    this->type = type;
-}
+    public:
+        Fixed();
+        ~Fixed();
+        Fixed(const Fixed &fixed);
+        Fixed& operator=(const Fixed &fixed);
+        int getRawBits(void) const;
+        void setRawBits(int const raw);
+};
 
-Weapon::Weapon()
-{
-    
-}
+#endif

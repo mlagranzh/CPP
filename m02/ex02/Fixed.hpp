@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
-/*   Updated: 2021/12/10 04:07:28 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/12 10:39:35 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-// HumanA::HumanA()
-// {
-    
-// }
+#include <iostream>
 
-void HumanA::attack()
+class Fixed
 {
-    std::cout << this -> name << " attacks with his " << this -> weapon.getType() << std::endl;
-}
+    private:
+        int fixed_point_val;
+        static const int number_fractional_bits = 8;
 
-std::string HumanA::get_name()
-{
-    return (this->name);
-}
+    public:
+        Fixed();
+        ~Fixed();
+        Fixed(const Fixed &fixed);
+        Fixed& operator=(const Fixed &fixed);
+        int getRawBits(void) const;
+        void setRawBits(int const raw);
+};
 
-void HumanA::set_name(std::string str)
-{
-    this->name = str;
-}
-
-
-HumanA::HumanA(std::string name, Weapon &weapon) :weapon(weapon)
-{
-    this->name = name;
-}
+#endif

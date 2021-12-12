@@ -6,22 +6,26 @@
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/10 02:52:50 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/12 12:57:31 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Fixed.hpp"
 
-int main()
+int main(void) 
 {
-    std::string my_str = "HI THIS IS BRAIN";
-    std::string *stringPTR = &my_str;
-    std::string &stringREF = my_str;
-
-    std::cout << "my_str: " << &my_str << std::endl;
-    std::cout << "stringPTR: " << stringPTR << std::endl;
-    std::cout << "stringREF: " << &stringREF << std::endl;
+    Fixed a;
+    Fixed const b(Fixed 5.05f) * Fixed(2));
     
-    std::cout << "string using PTR: " << *stringPTR << std::endl;
-    std::cout << "string using REF: " << stringREF << std::endl;
+    std::cout << a << std::endl;
+    std::cout << ++a << std::endl;
+    std::cout << a << std::endl;
+    std::cout << a++ << std::endl;
+    std::cout << a << std::endl;
+
+    std::cout << b << std::endl;
+    
+    std::cout << Fixed::max(a, b) << std::endl;
+    
+    return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
-/*   Updated: 2021/12/11 14:03:44 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/11 16:27:55 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class HumanA
         std::string name;
         Weapon &weapon;
     public:
-        HumanA(std::string name, Weapon &weapon);
+        HumanA(std::string name, Weapon &eapon);
         std::string get_name();
         void set_name(std::string str);
         void attack(void);

@@ -1,8 +1,8 @@
-NAME		=	main
-HEADER		=	
+NAME		=	Fixed
+HEADER		=	Fixed.hpp
 
 CPP			=	c++ -Wall -Wextra -Werror -std=c++98
-SRCS		=	main.cpp
+SRCS		=	main.cpp Fixed.cpp
 OBJ			=	$(SRCS:.cpp=.o)
 
 all: $(NAME)
