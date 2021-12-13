@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
-/*   Updated: 2021/12/12 10:39:35 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/13 11:08:31 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Fixed
 {
     private:
         int fixed_point_val;
-        static const int number_fractional_bits = 8;
+        static const int fractional_bits = 8;
 
     public:
         Fixed();

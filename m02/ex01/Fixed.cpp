@@ -6,17 +6,15 @@
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:41:05 by celys             #+#    #+#             */
-/*   Updated: 2021/12/12 14:01:26 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/13 11:45:30 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-
-
 Fixed::Fixed()
 {
-    std::cout << "outDefault constructor calledCopy" << std::endl;
+    std::cout << "Default constructor called" << std::endl;
     this -> setRawBits(0);
 }
 
@@ -49,27 +47,29 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void) const
 {
-    
+    return (this -> fixed_point_val / 1024.0);
 }
 
 int Fixed::toInt(void) const
 {
-    
+    return (this -> fixed_point_val / 1024);
 }
 
 Fixed::Fixed(const int value)
 {
-    this -> setRawBits(value << number_fractional_bits);
+    std::cout << "Int constructor called" << std::endl;
+    this -> setRawBits(value * 1024);
 }
 
 Fixed::Fixed(const float value)
 {
-    this -> setRawBits(roundf(value * (1 << value)));
+    std::cout << "Float constructor called" << std::endl;
+    this -> setRawBits(roundf(value * 1024));
 }
 
 std::ostream& operator<< (std::ostream &out, const Fixed &fixed)
 {
-    out << this -> getRawBits();
+    out << fixed.toFloat();
     return out;
 }
  
