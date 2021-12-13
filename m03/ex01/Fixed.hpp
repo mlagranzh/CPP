@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
-/*   Updated: 2021/12/13 18:45:59 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/13 11:30:39 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,35 +30,11 @@ class Fixed
         Fixed(const float value);
     
         Fixed& operator=(const Fixed &fixed);
-        friend std::ostream& operator<< (std::ostream &out, const Fixed &fixed);
-       
-        Fixed operator+(Fixed fixed);
-        Fixed operator-(Fixed fixed);
-        Fixed operator*(Fixed fixed);
-        Fixed operator/(Fixed fixed);
-
-        bool operator>(Fixed fixed) const;
-        bool operator<(Fixed fixed) const;
-        bool operator>=(Fixed fixed) const;
-        bool operator<=(Fixed fixed) const;
-        bool operator==(Fixed fixed) const;
-        bool operator!=(Fixed fixed) const;
-
-        Fixed& operator++();
-        Fixed& operator--();
-    
-        Fixed operator++(int);
-        Fixed operator--(int);
-
         int getRawBits(void) const;
         void setRawBits(int const raw);
         float toFloat(void) const;
         int toInt(void) const;
-
-        static Fixed &min(Fixed &a, Fixed &b);
-        static Fixed &max(Fixed &a, Fixed &b);
-        static const Fixed &min(Fixed const &a, Fixed const &b);
-        static const Fixed &max(Fixed const &a, Fixed const &b);
+        friend std::ostream& operator<< (std::ostream &out, const Fixed &fixed);
 };
 
 #endif

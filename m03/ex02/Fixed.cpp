@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:41:05 by celys             #+#    #+#             */
-/*   Updated: 2021/12/13 18:33:37 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/13 18:22:56 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,6 @@ bool Fixed::operator==(Fixed fixed) const
         return (true);
     return (false);
 }
-
 bool Fixed::operator!=(Fixed fixed) const
 {
     if (this -> getRawBits() != fixed.getRawBits())
