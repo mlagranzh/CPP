@@ -6,17 +6,15 @@
 /*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:41:05 by celys             #+#    #+#             */
-/*   Updated: 2021/12/12 13:54:08 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/15 18:14:58 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-
-
 Fixed::Fixed()
 {
-    std::cout << "Default constructor calledCopy" << std::endl;
+    std::cout << "Default constructor called" << std::endl;
     this -> setRawBits(0);
 }
 

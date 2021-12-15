@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 18:24:23 by celys             #+#    #+#             */
-/*   Updated: 2021/12/14 21:48:44 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/15 18:10:47 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Point
         Point(float point1, float point2);
         Point& operator=(const Point &point);
         Fixed get_X() const;
-        Fixed get_Y() const;     
+        Fixed get_Y() const;
 };
 
 bool bsp(Point const a, Point const b, Point const c, Point const point);

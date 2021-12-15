@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 18:26:35 by celys             #+#    #+#             */
-/*   Updated: 2021/12/14 21:41:21 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/15 17:53:56 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 float distance(Point const a, Point const b)
 {
-    return (sqrt(pow((b.get_X().getRawBits() - a.get_X().getRawBits()), 2) + pow((b.get_Y().getRawBits() - b.get_Y().getRawBits()), 2)));
+    float x = b.get_X().toFloat() - a.get_X().toFloat();
+    float y = b.get_Y().toFloat() - a.get_Y().toFloat();
+
+    return (sqrt(pow(x, 2) + pow(y, 2)));
 }
 
 float square(Point const a, Point const b, Point const c)

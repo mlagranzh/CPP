@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 18:27:42 by celys             #+#    #+#             */
-/*   Updated: 2021/12/14 21:53:39 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/15 18:10:55 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ Point::Point(float point1, float point2) : x(point1), y(point2)
 
 Point::Point(const Point &point) : x(point.x), y(point.y)
 {
-    point.get_X();
+    
 }
 
 Point &Point::operator=(const Point &point)
 {
-    
+    point.get_X();
     return *this;
 }
 
