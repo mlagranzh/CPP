@@ -3,29 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
+/*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/13 11:48:06 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/14 21:55:00 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Point.hpp"
 
 int main(void) 
 {
-    Fixed a;
-    Fixed const b(Fixed (5.05f) * Fixed(2));
-    
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
+    Point A(1.2, 3.4);
+    Point B(4.2, 3.4);
+    Point C(10.2, 3.4);
 
-    std::cout << b << std::endl;
+    Point p(1.3, 3.3);
+    if (bsp(A, B, C, p))
+        std::cout << "TRUE" << std::endl;
+    else
+        std::cout << "False" << std::endl;
     
-    std::cout << Fixed::max(a, b) << std::endl;
-    
+    Point p(100.3, 3.3);
+    if (bsp(A, B, C, p))
+        std::cout << "TRUE" << std::endl;
+    else
+        std::cout << "False" << std::endl;
+
     return 0;
 }

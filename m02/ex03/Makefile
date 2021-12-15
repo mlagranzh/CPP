@@ -1,8 +1,9 @@
 NAME		=	Fixed
-HEADER		=	Fixed.hpp
+HEADER		=	Fixed.hpp Point.hpp
 
-CPP			=	c++ -Wall -Wextra -Werror -std=c++98
-SRCS		=	main.cpp Fixed.cpp
+CPP			=	c++
+#CPP			=	c++ -Wall -Wextra -Werror -std=c++98
+SRCS		=	main.cpp Fixed.cpp bsp.cpp Point.cpp
 OBJ			=	$(SRCS:.cpp=.o)
 
 all: $(NAME)

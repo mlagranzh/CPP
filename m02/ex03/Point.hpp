@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
+/*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 18:24:23 by celys             #+#    #+#             */
-/*   Updated: 2021/12/13 18:44:52 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/14 21:48:44 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONT_HPP
+#ifndef POINT_HPP
 # define POINT_HPP
 
 #include "Fixed.hpp"
@@ -26,7 +26,10 @@ class Point
         Point(const Point &point);
         Point(float point1, float point2);
         Point& operator=(const Point &point);
-        
+        Fixed get_X() const;
+        Fixed get_Y() const;     
 };
+
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif

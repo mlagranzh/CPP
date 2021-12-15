@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
+/*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:41:05 by celys             #+#    #+#             */
-/*   Updated: 2021/12/13 18:33:37 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/14 19:40:11 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ Fixed::Fixed(const float value)
     this -> setRawBits(roundf(value * 1024));
 }
 
-std::ostream& operator<< (std::ostream &out, const Fixed &fixed)
+std::ostream& operator<<(std::ostream &out, const Fixed &fixed)
 {
     out << fixed.toFloat();
     return out;
