@@ -1,8 +1,8 @@
 NAME		=	Fixed
-HEADER		=	Fixed.hpp
+HEADER		=	ClapTrap.hpp
 
 CPP			=	c++ -Wall -Wextra -Werror -std=c++98
-SRCS		=	main.cpp Fixed.cpp
+SRCS		=	main.cpp ClapTrap.cpp
 OBJ			=	$(SRCS:.cpp=.o)
 
 all: $(NAME)

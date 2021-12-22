@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: celys <celys@student.42.fr>                +#+  +:+       +#+        */
+/*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/15 15:52:41 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/22 20:05:17 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ int main(void)
     std::cout << b << std::endl;
     
     std::cout << Fixed::max(a, b) << std::endl;
-    
+
+    Fixed c(12.1f);
+    Fixed d(5.2f);
+    std::cout << c / d << std::endl;
+    std::cout << d * c << std::endl;
+    std::cout << Fixed::min(c, d) << std::endl;
+
     return 0;
 }
