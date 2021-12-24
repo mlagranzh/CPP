@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
-/*   Updated: 2021/12/23 02:49:44 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/20 22:29:21 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
-#include "ClapTrap.hpp"
+#include <iostream>
 
-class ScavTrap : public ClapTrap
-{        
+class ClapTrap
+{
+    private:
+        std::string		Name;
+        unsigned int	Hitpoints;
+        unsigned int	Energy_points;
+        unsigned int	Attack_damage;
+        
     public:
-        ScavTrap();
-        ~ScavTrap();
-        ScavTrap(std::string Name);
-        ScavTrap(const ScavTrap &fixed);
-        ScavTrap& operator=(const ScavTrap &fixed);
+        ClapTrap();
+        ~ClapTrap();
+        ClapTrap(std::string Name);
+        ClapTrap(const ClapTrap &fixed);
+        ClapTrap& operator=(const ClapTrap &fixed);
         
 		void attack(std::string const & target);
+        void takeDamage(unsigned int amount);
+        void beRepaired(unsigned int amount);
 		
         unsigned int get_Hitpoints(void);
 		unsigned int get_Energy_points(void);
@@ -35,7 +43,6 @@ class ScavTrap : public ClapTrap
 		void 	set_Energy_points(unsigned int amount);
         void 	set_Attack_damage(unsigned int amount);
 		void	set_Name(std::string string);
-        void    guardGate();
 };
 
 #endif

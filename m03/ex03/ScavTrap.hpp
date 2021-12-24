@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
-/*   Updated: 2021/12/23 02:49:44 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/24 04:12:36 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {        
     public:
         ScavTrap();

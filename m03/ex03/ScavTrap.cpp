@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:41:05 by celys             #+#    #+#             */
-/*   Updated: 2021/12/24 22:10:56 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/24 22:11:37 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ ScavTrap::ScavTrap(std::string Name)
 
 ScavTrap::ScavTrap(const ScavTrap &ScavTrap)
 {
-    std::cout << "ScavTrap Copy constructor called " << std::endl;
+    std::cout << "ScavTrap Copy constructor " << std::endl;
     this -> set_Name(ScavTrap.Name);
     this -> set_Hitpoints(ScavTrap.Hitpoints);
     this -> set_Energy_points(ScavTrap.Energy_points);

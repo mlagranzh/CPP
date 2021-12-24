@@ -5,28 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/24 21:54:52 by celys            ###   ########.fr       */
+/*   Created: 2021/12/23 01:40:49 by celys             #+#    #+#             */
+/*   Updated: 2021/12/23 23:15:28 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-
-int main(void) 
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+int main()
 {
-    ClapTrap pingwin("pingwin");
-    ClapTrap straus("straus");
+	FragTrap	a("a");
+	ScavTrap	b("b");
 
-    pingwin.attack("straus");
-    straus.attack("pingwin");
-
-    pingwin.takeDamage(5);
-    straus.takeDamage(3);
-
-    pingwin.beRepaired(20);
-    straus.beRepaired(20);
-
-    std::cout << pingwin.get_Hitpoints() << std::endl;
-    std::cout << straus.get_Hitpoints() << std::endl;
-    return 0;
+	std::cout << std::endl;
+	a.attack("b");
+	b.takeDamage(a.get_Attack_damage());
+	std::cout << std::endl;
+	b.attack("a");
+	a.takeDamage(b.get_Attack_damage());
+	std::cout << std::endl;
+	a.attack("b");
+	b.takeDamage(a.get_Attack_damage());
+	std::cout << std::endl;
+	b.attack("a");
+	a.takeDamage(b.get_Attack_damage());
+	std::cout << std::endl;
+	b.guardGate();
+	std::cout << std::endl;
+	a.highFivesGuys();
+	std::cout << std::endl;
+	return (0);
 }

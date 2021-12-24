@@ -5,17 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/24 21:54:52 by celys            ###   ########.fr       */
+/*   Created: 2021/12/23 01:40:49 by celys             #+#    #+#             */
+/*   Updated: 2021/12/24 22:08:33 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void) 
 {
-    ClapTrap pingwin("pingwin");
-    ClapTrap straus("straus");
+    FragTrap pingwin("pingwin");
+    FragTrap straus("straus");
 
     pingwin.attack("straus");
     straus.attack("pingwin");
@@ -28,5 +28,7 @@ int main(void)
 
     std::cout << pingwin.get_Hitpoints() << std::endl;
     std::cout << straus.get_Hitpoints() << std::endl;
+
+    pingwin.highFivesGuys();
     return 0;
 }

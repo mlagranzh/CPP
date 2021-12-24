@@ -80,8 +80,8 @@ Fixed Fixed::operator-(Fixed fixed)
 
 Fixed Fixed::operator*(Fixed fixed)
 {
-    this -> setRawBits(this -> getRawBits() * fixed.getRawBits() / pow(2, this->fractional_bits));
-    return (*this);
+    float a =  this -> getRawBits() / pow(2, this->fractional_bits) * fixed.getRawBits() / pow(2, this->fractional_bits)
+    return (Fixed(a));
 }
 
 Fixed Fixed::operator/(Fixed fixed)

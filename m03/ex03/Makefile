@@ -1,8 +1,8 @@
-NAME		=	ClapTrap
-HEADER		=	ClapTrap.hpp
+NAME		=	DiamondTrap
+HEADER		=	ClapTrap.hpp ScavTrap.hpp DiamondTrap.hpp FragTrap.hpp
 
-CPP			=	c++ -Wall -Wextra -Werror -std=c++98
-SRCS		=	main.cpp ClapTrap.cpp
+CPP			=	c++ -Wall -Wextra -Werror -std=c++98  -Wshadow -Wno-shadow
+SRCS		=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJ			=	$(SRCS:.cpp=.o)
 
 all: $(NAME)

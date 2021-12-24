@@ -5,28 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/24 21:54:52 by celys            ###   ########.fr       */
+/*   Created: 2021/12/23 01:40:49 by celys             #+#    #+#             */
+/*   Updated: 2021/12/23 03:01:58 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main(void) 
+int main()
 {
-    ClapTrap pingwin("pingwin");
-    ClapTrap straus("straus");
+    ScavTrap pingwi("pingwi");
+    ScavTrap straus("straus");
 
-    pingwin.attack("straus");
-    straus.attack("pingwin");
+    pingwi.attack("straus");
+    straus.takeDamage(pingwi.get_Attack_damage());
 
-    pingwin.takeDamage(5);
-    straus.takeDamage(3);
-
-    pingwin.beRepaired(20);
-    straus.beRepaired(20);
-
-    std::cout << pingwin.get_Hitpoints() << std::endl;
-    std::cout << straus.get_Hitpoints() << std::endl;
-    return 0;
+    pingwi.guardGate();
+    pingwi.attack("straus");
+    straus.takeDamage(straus.get_Attack_damage());
+    straus.beRepaired(30);
+    pingwi.attack("straus");
+    straus.takeDamage(straus.get_Attack_damage());
 }

@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
-/*   Updated: 2021/12/23 02:49:44 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/24 20:46:05 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef DIAMONDTRAP
+# define DIAMONDTRAP
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-class ScavTrap : public ClapTrap
-{        
+class DiamondTrap : public FragTrap, public ScavTrap
+{
+    private:
+        std::string Name;
     public:
-        ScavTrap();
-        ~ScavTrap();
-        ScavTrap(std::string Name);
-        ScavTrap(const ScavTrap &fixed);
-        ScavTrap& operator=(const ScavTrap &fixed);
-        
+        DiamondTrap();
+        ~DiamondTrap();
+        DiamondTrap(std::string Name);
+        DiamondTrap(const DiamondTrap &Diamond);
+        DiamondTrap& operator=(const DiamondTrap &Diamond);
 		void attack(std::string const & target);
 		
         unsigned int get_Hitpoints(void);
@@ -35,7 +37,7 @@ class ScavTrap : public ClapTrap
 		void 	set_Energy_points(unsigned int amount);
         void 	set_Attack_damage(unsigned int amount);
 		void	set_Name(std::string string);
-        void    guardGate();
+        void    whoAmI(void);
 };
 
 #endif
