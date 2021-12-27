@@ -1,8 +1,8 @@
-NAME		=	Brain
-HEADER		=	Dog.hpp Cat.hpp Animal.hpp Brain.hpp
+NAME		=	Bureaucrat
+HEADER		=	Bureaucrat.hpp
 
 CPP			=	c++ -Wall -Wextra -Werror -std=c++98
-SRCS		=	main.cpp Dog.cpp Cat.cpp Animal.cpp Brain.cpp
+SRCS		=	main.cpp Bureaucrat.cpp
 OBJ			=	$(SRCS:.cpp=.o)
 
 all: $(NAME)
@@ -24,4 +24,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all libft clean fclean re
+.PHONY: all libft clean fclean re leaks

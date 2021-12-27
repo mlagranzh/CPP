@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/27 19:43:05 by celys            ###   ########.fr       */
+/*   Created: 2021/12/26 17:38:30 by celys             #+#    #+#             */
+/*   Updated: 2021/12/27 22:34:22 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef ICE_HPP
+#define ICE_HPP
 
-int main()
+#include "AMateria.hpp"
+
+class Ice : public AMateria
 {
-    Cat a1;
-    std::cout << a1.get_Brain() << std::endl;
-    a1.makeSound();
-    std::cout << "************************************" << std::endl; 
-    Dog b1;
-    std::cout << b1.get_Brain() << std::endl;
-    b1.makeSound();
-    std::cout << "************************************" << std::endl;
-    // Animal C;
-    return (0);
-}
+    public:
+        Ice();
+        Ice(const Ice &ice);
+        virtual ~Ice();
+        Ice & operator=(const Ice &cure);
+        
+        AMateria* clone() const;
+        void use(ICharacter& target);
+        void setType(std::string const &type);
+};
+
+#endif

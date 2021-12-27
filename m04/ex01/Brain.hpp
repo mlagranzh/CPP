@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/27 19:43:05 by celys            ###   ########.fr       */
+/*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
+/*   Updated: 2021/12/26 03:29:47 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-int main()
+#include <iostream>
+
+class Brain
 {
-    Cat a1;
-    std::cout << a1.get_Brain() << std::endl;
-    a1.makeSound();
-    std::cout << "************************************" << std::endl; 
-    Dog b1;
-    std::cout << b1.get_Brain() << std::endl;
-    b1.makeSound();
-    std::cout << "************************************" << std::endl;
-    // Animal C;
-    return (0);
-}
+    private:
+        std::string *ideas;
+    public:
+        Brain();
+        ~Brain();
+        Brain(const Brain &Brain);
+        Brain& operator=(const Brain &Brain);
+        		
+		std::string *get_ideas(void) const;
+		void	set_ideas(std::string *string);
+};
+
+#endif

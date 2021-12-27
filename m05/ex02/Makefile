@@ -1,4 +1,4 @@
-NAME		=	Brain
+NAME		=	Animal
 HEADER		=	Dog.hpp Cat.hpp Animal.hpp Brain.hpp
 
 CPP			=	c++ -Wall -Wextra -Werror -std=c++98

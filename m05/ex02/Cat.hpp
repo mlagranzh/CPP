@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/27 19:43:05 by celys            ###   ########.fr       */
+/*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
+/*   Updated: 2021/12/26 03:32:24 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-int main()
-{
-    Cat a1;
-    std::cout << a1.get_Brain() << std::endl;
-    a1.makeSound();
-    std::cout << "************************************" << std::endl; 
-    Dog b1;
-    std::cout << b1.get_Brain() << std::endl;
-    b1.makeSound();
-    std::cout << "************************************" << std::endl;
-    // Animal C;
-    return (0);
-}
+#include "Animal.hpp"
+#include "Brain.hpp"
+
+class Cat : public Animal
+{        
+    private:
+        Brain *brain;
+    public:
+        Cat();
+        ~Cat();
+        Cat(std::string Name);
+        Cat(const Cat &Cat);
+        Cat& operator=(const Cat &Cat);
+        void makeSound();
+
+        Brain*  get_Brain() const;
+        void    set_Brain(Brain *Brain);
+};
+
+#endif

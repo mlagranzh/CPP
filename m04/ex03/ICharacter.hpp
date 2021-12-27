@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/27 19:43:05 by celys            ###   ########.fr       */
+/*   Created: 2021/12/26 17:38:30 by celys             #+#    #+#             */
+/*   Updated: 2021/12/27 20:50:38 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef ICHARACTER_HPP
+#define ICHARACTER_HPP
 
-int main()
+#include "AMateria.hpp"
+
+class AMateria;
+
+class ICharacter
 {
-    Cat a1;
-    std::cout << a1.get_Brain() << std::endl;
-    a1.makeSound();
-    std::cout << "************************************" << std::endl; 
-    Dog b1;
-    std::cout << b1.get_Brain() << std::endl;
-    b1.makeSound();
-    std::cout << "************************************" << std::endl;
-    // Animal C;
-    return (0);
-}
+    public:
+        virtual ~ICharacter() {}
+        virtual std::string const & getName() const = 0;
+        virtual void equip(AMateria* m) = 0;
+        virtual void unequip(int idx) = 0;
+        virtual void use(int idx, ICharacter& target) = 0;
+};
+
+#endif

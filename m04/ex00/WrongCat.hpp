@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/27 19:43:05 by celys            ###   ########.fr       */
+/*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
+/*   Updated: 2021/12/27 19:23:10 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-int main()
-{
-    Cat a1;
-    std::cout << a1.get_Brain() << std::endl;
-    a1.makeSound();
-    std::cout << "************************************" << std::endl; 
-    Dog b1;
-    std::cout << b1.get_Brain() << std::endl;
-    b1.makeSound();
-    std::cout << "************************************" << std::endl;
-    // Animal C;
-    return (0);
-}
+#include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
+{        
+    public:
+        WrongCat();
+        ~WrongCat();
+        WrongCat(std::string Name);
+        WrongCat(const WrongCat &WrongCat);
+        WrongCat& operator=(const WrongCat &WrongCat);
+        
+        void makeSound() const;
+};
+
+#endif

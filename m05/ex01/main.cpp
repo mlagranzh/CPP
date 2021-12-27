@@ -6,33 +6,27 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/27 19:12:39 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/27 04:47:09 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongCat.hpp"
+#include "Bureaucrat.hpp"
 
 int main()
 {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->get_type() << " " << std::endl;
-    std::cout << i->get_type() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
-
-    const WrongAnimal* k = new WrongCat();
-    std::cout << k->get_type() << " " << std::endl;
-    k->makeSound();
+    Bureaucrat a;
+    Bureaucrat b("Nick", 10);
+    Bureaucrat c("Pingwi", 1000);;
+    Bureaucrat d("Steeve", -1);;
+    std::cout << a << std::endl;
+    std::cout << b << std::endl;
+    std::cout << c << std::endl;
+    std::cout << d << std::endl;
     
-    delete meta;
-    delete j;
-    delete i;
-    delete k;
+    Bureaucrat e("Tom", 150);
+    e.grade_high();
+    Bureaucrat f("Peter", 1);
+    f.grade_low();
 
     return (0);
 }

@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/27 19:43:05 by celys            ###   ########.fr       */
+/*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
+/*   Updated: 2021/12/26 17:18:14 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-int main()
+#include <iostream>
+
+class Animal
 {
-    Cat a1;
-    std::cout << a1.get_Brain() << std::endl;
-    a1.makeSound();
-    std::cout << "************************************" << std::endl; 
-    Dog b1;
-    std::cout << b1.get_Brain() << std::endl;
-    b1.makeSound();
-    std::cout << "************************************" << std::endl;
-    // Animal C;
-    return (0);
-}
+    protected:
+        std::string type;
+        Animal();
+        virtual ~Animal();
+        Animal(const Animal &Animal);
+    public:
+        Animal& operator=(const Animal &Animal);
+        		
+		std::string	get_type(void) const;
+		void	set_type(std::string string);
+        virtual void	makeSound() = 0;
+};
+
+#endif
