@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/30 00:19:43 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/30 21:39:19 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@
 
 int main()
 {
-    Bureaucrat  *tom = new Bureaucrat("Tom", 146);
-    Bureaucrat  *john = new Bureaucrat("John", 100);
+    Bureaucrat  *tom = new Bureaucrat("Tom", 1);
+    Bureaucrat  *john = new Bureaucrat("John", 1);
     Form        *forma = new ShrubberyCreationForm("forma");
     
     std::cout << *forma << std::endl;;
     std::cout << *tom << std::endl;;
     std::cout << *john << std::endl;;
+    forma->beSigned(*tom);    forma->beSigned(*john);
+
     try
     {
         tom->signForm(*forma);
@@ -64,7 +66,9 @@ int main()
     }   
     std::cout << "************************" << std::endl;
     
-    RobotomyRequestForm     *robot_form = new RobotomyRequestForm("Carl");
+    RobotomyRequestForm     *robot_form = new RobotomyRequestForm("ROBO_FORM");
+    robot_form->beSigned(*tom);
+    robot_form->beSigned(*john);
     try
     {
         while (tom->get_grade() > 40)

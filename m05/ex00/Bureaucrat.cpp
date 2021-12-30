@@ -58,14 +58,14 @@ void	Bureaucrat::set_grade(int grade)
 
 void	Bureaucrat::grade_dicrement()
 {
-    if (this -> get_grade() + 1 < 1)
+    if (this -> get_grade() - 1 < 1)
         throw Bureaucrat::GradeTooHighException(this -> get_name());
     this -> set_grade(this->get_grade() - 1);
 }
 
 void	Bureaucrat::grade_increment()
 {
-    if (this -> get_grade() - 1 > 150)
+    if (this -> get_grade() + 1 > 150)
         throw Bureaucrat::GradeTooLowException(this -> get_name());
     this -> set_grade(this->get_grade() + 1);
 }

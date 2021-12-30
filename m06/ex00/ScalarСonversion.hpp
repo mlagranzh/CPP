@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   ScalarСonversion.hpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
-/*   Updated: 2021/12/27 04:46:59 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/30 20:43:12 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-# define BUREAUCRAT_HPP
+#ifndef ScalarСonversion_HPP
+# define ScalarСonversion_HPP
 
 #include <iostream>
 
-class Bureaucrat
+class ScalarСonversion
 {
     private:
-        std::string const _name;
-        int				  _grade;
+        std::string const string;
     public:
-        Bureaucrat();
-        ~Bureaucrat();
-		Bureaucrat(std::string name, int grade);
-		Bureaucrat(const Bureaucrat &bureaucrat);
-        Bureaucrat& operator=(const Bureaucrat &bureaucrat);
+        ScalarСonversion();
+        ~ScalarСonversion();
+		ScalarСonversion(std::string string);
+		ScalarСonversion(const ScalarСonversion &scalar);
+        ScalarСonversion& operator=(const ScalarСonversion &scalar);
 
-		std::string	get_name(void) const;
-		int		get_grade(void) const;
-		void	set_grade(int grade);
+		double to_Double();
+		int to_Int();
+		float to_Float();
+		char to_Char();
 
-		void	grade_high();
-		void	grade_low();
-		
 		class GradeTooHighException
 		{
 			private:
