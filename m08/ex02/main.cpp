@@ -6,13 +6,13 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 04:44:59 by celys             #+#    #+#             */
-/*   Updated: 2022/01/02 14:21:12 by celys            ###   ########.fr       */
+/*   Updated: 2022/01/02 14:33:41 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mutantstack.hpp"
 
-main()
+int main()
 {
     MutantStack<int> mstack;
     
