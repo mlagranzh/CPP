@@ -1,8 +1,8 @@
-NAME		=	Form
-HEADER		=	Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+NAME		=	Identify
+HEADER		=	Base.hpp
 
-CPP			=	g++ -Wall -Wextra -Werror -std=c++98
-SRCS		=	main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+CPP			=	c++ -Wall -Wextra -Werror -std=c++98
+SRCS		=	main.cpp
 OBJ			=	$(SRCS:.cpp=.o)
 
 all: $(NAME)

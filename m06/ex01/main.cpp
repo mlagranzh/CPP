@@ -6,41 +6,37 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/29 02:04:57 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/31 07:25:50 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include <iostream>
+
+struct Data 
+{
+    int number;
+};
+
+uintptr_t serialize(Data* ptr)
+{
+    return (reinterpret_cast<uintptr_t>(ptr));
+}
+
+Data* deserialize(uintptr_t raw)
+{
+    return (reinterpret_cast<Data*>(raw));
+}
 
 int main()
 {
-    try
-    {
-        Bureaucrat a;
-        Bureaucrat b("Nick", 10);
-        Bureaucrat c("Pingwi", 1000);;
-        Bureaucrat d("Steeve", -1);;
-        std::cout << a << std::endl;
-        std::cout << b << std::endl;
-        std::cout << c << std::endl;
-        std::cout << d << std::endl;
-        
-        Bureaucrat e("Tom", 150);
-        e.grade_high();
-        Bureaucrat f("Peter", 1);
-        f.grade_low();
-    }    
-    catch (Bureaucrat::GradeTooHighException &e)
-    {
-        std::cerr << e.who() << ": " << e.what() << std::endl;
-        return ;
-    }
-    catch (Bureaucrat::GradeTooLowException &e)
-    {
-        std::cerr << e.who() << ": " << e.what() << std::endl;
-        return ;
-    }   
+    Data *ptr;
+    ptr = new Data;
+    
+    std::cout << ptr << std::endl;
+    std::cout << serialize(ptr) << std::endl;
+    std::cout << deserialize(serialize(ptr)) << std::endl;
+
+    delete ptr;
     
     return (0);
 }

@@ -6,21 +6,15 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 00:52:50 by celys             #+#    #+#             */
-/*   Updated: 2021/12/29 23:25:14 by celys            ###   ########.fr       */
+/*   Updated: 2022/01/02 11:23:47 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() : _name("FORM"), _signed(0), _grade_sign(0), _grade_execute(0)
-{
-    
-}
+Form::Form() : _name("FORM"), _signed(0), _grade_sign(0), _grade_execute(0) {}
 
-Form::~Form()
-{
-    
-}
+Form::~Form() {}
 
 Form::Form(std::string name, int grade_sign, int grade_execute) : _name(name),  _signed(0), _grade_sign(grade_sign), _grade_execute(grade_execute)
 {
@@ -30,10 +24,7 @@ Form::Form(std::string name, int grade_sign, int grade_execute) : _name(name),  
         throw Bureaucrat::GradeTooLowException(this -> get_name());
 }
 
-
-Form::Form(const Form &form) : _name(form.get_name()), _signed(form.get_signed()), _grade_sign(form.get_grade_sign()), _grade_execute(form.get_grade_execute())
-{
-}
+Form::Form(const Form &form) : _name(form.get_name()), _signed(form.get_signed()), _grade_sign(form.get_grade_sign()), _grade_execute(form.get_grade_execute()) {}
 
 Form& Form::operator=(const Form &form)
 {

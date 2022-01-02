@@ -6,76 +6,62 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/29 02:59:42 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/31 07:53:12 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "Form.hpp"
-#include "Bureaucrat.hpp"
+#include "Base.hpp"
 
-int main()
+
+Base *generate(void)
+{
+    Base *array[3] = {new A(), new B(), new C()};
+    int number = rand() % 3;
+    for (int i = 0; i < 3; i++)
+    {
+        if (i != number)
+            delete array[i];
+    }
+    return (array[number]);
+}
+
+void identify(Base* p)
 {
     try
     {
-        Bureaucrat  *karina = new Bureaucrat("Karina", 146);
-        Bureaucrat  *pavel = new Bureaucrat("Pavel", 100);
-        Form        *trees = new ShrubberyCreationForm("Vanya");
-
-        std::cout << std::endl;
-        std::cout << *trees << std::endl;;
-        std::cout << *karina << std::endl;;
-        karina->signForm(*trees);
-        std::cout << *pavel << std::endl;;
-        pavel->signForm(*trees);
-        std::cout << *trees << std::endl;;
-
-        std::cout << std::endl;
-        karina->executeForm(*trees);
-        pavel->executeForm(*trees);
-        std::cout << std::endl;
-        RobotomyRequestForm     *robot_form = new RobotomyRequestForm("Carl");
-        while (karina->get_grade() > 40)
-            karina->grade_high();
-        std::cout << *robot_form << std::endl;
-        std::cout << *karina << std::endl;
-        karina->signForm(*robot_form);
-        std::cout << *pavel << std::endl;
-        pavel->executeForm(*robot_form);
-        karina->executeForm(*robot_form);
-
-        std::cout << std::endl;
-        PresidentialPardonForm  *pres_form = new PresidentialPardonForm("Jim");
-        while (pavel->get_grade() > 4)
-            pavel->grade_high();
-        std::cout << *pres_form << std::endl;;
-        std::cout << *pavel << std::endl;;
-        pavel->signForm(*pres_form);
-        karina->executeForm(*pres_form);
-        pavel->executeForm(*pres_form);
-
-        delete pres_form;
-        delete robot_form;
-        delete pavel;
-        delete karina;
+        A& a = dynamic_cast<A&>(*p);
+        std::cerr << "This is class A" << '\n';
+        (void) a;
     }
-    catch (Form::GradeTooHighException &e)
+    catch(const std::exception& e)
     {
-        std::cerr << e.who() << ": " << e.what() << std::endl;
+    }    
+
+    try
+    {
+        B& a = dynamic_cast<B&>(*p);
+        std::cerr << "This is class B" << '\n';
+        (void) a;
     }
-    catch (Form::GradeTooLowException &e)
+    catch(const std::exception& e)
     {
-        std::cerr << e.who() << ": " << e.what() << std::endl;
-    }   
-    catch (Bureaucrat::GradeTooHighException &e)
+    }    
+
+    try
     {
-        std::cerr << e.who() << ": " << e.what() << std::endl;
+        C& a = dynamic_cast<C&>(*p);
+        std::cerr << "This is class C" << '\n';
+        (void) a;
     }
-    catch (Bureaucrat::GradeTooLowException &e)
+    catch(const std::exception& e)
     {
-        std::cerr << e.who() << ": " << e.what() << std::endl;
-    }
+    }    
+}
+
+int main()
+{
+    Base *ptr;
+    ptr = generate();
+    identify(ptr);
     return (0);
 }

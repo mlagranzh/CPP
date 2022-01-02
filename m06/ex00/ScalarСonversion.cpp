@@ -1,95 +1,137 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*   ScalarСonversion.cpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:41:05 by celys             #+#    #+#             */
-/*   Updated: 2021/12/29 21:22:48 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/31 07:09:52 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "ScalarСonversion.hpp"
 
-Bureaucrat::Bureaucrat() : _name("Bureaucrat")
-{
-    this -> set_grade(0);
-}
-
-Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
-{
-    if (grade < 1)
-        throw Bureaucrat::GradeTooHighException(this -> get_name());
-    if (grade > 150)
-            throw Bureaucrat::GradeTooLowException(this -> get_name());
-    this -> set_grade(grade);
-}
-
-Bureaucrat::~Bureaucrat()
+ScalarСonversion::ScalarСonversion()
 {
     
 }
 
-std::string	Bureaucrat::get_name(void) const
+ScalarСonversion::~ScalarСonversion()
 {
-    return (this -> _name);
+    
 }
 
-int		Bureaucrat::get_grade(void) const
+ScalarСonversion::ScalarСonversion(std::string string)
 {
-    return (this -> _grade);
-}
-void	Bureaucrat::set_grade(int grade)
-{
-    this -> _grade = grade;
-}
-
-void	Bureaucrat::grade_low()
-{
-    if (this -> get_grade() - 1 < 1)
-        throw Bureaucrat::GradeTooHighException(this -> get_name());
-    this -> set_grade(this->get_grade() - 1);
-}
-
-void	Bureaucrat::grade_high()
-{
-    if (this -> get_grade() + 1 > 150)
-        throw Bureaucrat::GradeTooLowException(this -> get_name());
-    this -> set_grade(this->get_grade() + 1);
-
+    // int i = -1;
+    // if (!(string == "+inf" || string == "-inf" || \
+    //          string == "inf" || string == "nan"))
+    // {
+    //     while (string[++i])
+    //     {
+    //         if (string[i] == '.')
+    //             break;
+    //         if (!isdigit(string[i]))
+    //             throw std::invalid_argument("STRING");
+    //     }
+    // }
+    this -> string = string;
 }
 
-Bureaucrat::GradeTooHighException::GradeTooHighException (std::string name) : _name(name)
+ScalarСonversion::ScalarСonversion::operator double() const
 {
+    double d;
+    
+    d  = std::stod(this -> string);
+    return (d);
 }
 
-Bureaucrat::GradeTooLowException::GradeTooLowException (std::string name) : _name(name)
+ScalarСonversion::ScalarСonversion::operator int() const
 {
+    int i;
+    
+    i  = std::stoi(this -> string);
+    return (i);
 }
 
-const char *Bureaucrat::GradeTooHighException::what() const throw()
+ScalarСonversion::ScalarСonversion::operator float() const
 {
-    return ("Value Too High!");
+    float f;
+    
+    f  = std::stof(this -> string);
+    return (f);
 }
 
-const char *Bureaucrat::GradeTooLowException::what() const throw()
+ScalarСonversion::operator char() const
 {
-    return ("Value Too Low!");
+    char ch;
+    
+    if (string.size() == 1)
+        return (string[0]);
+    ch = std::stoi(this -> string);
+    if (ch < 32 || ch > 127)
+        throw "Non displayable";
+    return (ch);
 }
 
-std::string Bureaucrat::GradeTooLowException::who() const throw()
+void ScalarСonversion::print_char() const
 {
-    return (this -> _name);
+    std::cout << "char: ";
+    try
+    {
+        char c = static_cast<char>(*this);
+        std::cout << "'" << c << "'" << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << "impossible" << std::endl;
+    }
+    catch(const char*)
+    {
+        std::cout << "Non displayable" << std::endl;
+    }
 }
 
-std::string Bureaucrat::GradeTooHighException::who() const throw()
+void ScalarСonversion::print_float() const
 {
-    return (this -> _name);
+    std::cout << "float: ";
+    try
+    {
+        std::cout.precision(1);
+        float f = static_cast<float>(*this);
+        std::cout << std::fixed << f << "f" <<  std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << "impossible" << std::endl;
+    }   
 }
 
-std::ostream& operator<< (std::ostream &out, const Bureaucrat &bureaucrat)
+void ScalarСonversion::print_double() const
 {
-    out << bureaucrat.get_name() << ", bureaucrat grade " << bureaucrat.get_grade() << ".";
-    return (out);
+    std::cout << "double: ";
+    try
+    {
+        double d = static_cast<double>(*this);
+        std::cout << d << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << "impossible" << std::endl;
+    }
+}
+
+void ScalarСonversion::print_int() const
+{
+    std::cout << "int: ";
+    try
+    {
+        int i = static_cast<int>(*this);
+        std::cout << i << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << "impossible" << std::endl;
+    }
 }

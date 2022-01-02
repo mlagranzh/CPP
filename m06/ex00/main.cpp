@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/30 20:32:57 by celys            ###   ########.fr       */
+/*   Updated: 2021/12/31 07:06:30 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,25 +26,10 @@ int main(int argc, char **argv)
         return (0);
     }
 
-    
-    char ch;
-    int a;
-    float f;
-    double d;
-    if (str == "-inf" || str == "+inf")
-    {
-        
-    }
-    
-    double n = static_cast<double>(str);
-    ch = std::stoi(str);
-    a = static_cast<int>(std::stoi(str));
-    f = static_cast<float>(std::stof(str));
-    d = std::stod(str);
-    std::cout << ch << std::endl;
-    std::cout << a << std::endl;
-    std::cout << f << std::endl;
-    std::cout << d << std::endl;
-
+    ScalarСonversion string(str);
+    string.print_char();
+    string.print_int();
+    string.print_float();
+    string.print_double();    
     return (0);
 }

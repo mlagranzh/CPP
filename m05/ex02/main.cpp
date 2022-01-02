@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/30 21:39:19 by celys            ###   ########.fr       */
+/*   Updated: 2022/01/02 11:50:56 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,13 @@
 
 int main()
 {
-    Bureaucrat  *tom = new Bureaucrat("Tom", 1);
-    Bureaucrat  *john = new Bureaucrat("John", 1);
+    Bureaucrat  *tom = new Bureaucrat("Tom", 110);
+    Bureaucrat  *john = new Bureaucrat("John", 140);
     Form        *forma = new ShrubberyCreationForm("forma");
     
     std::cout << *forma << std::endl;;
     std::cout << *tom << std::endl;;
     std::cout << *john << std::endl;;
-    forma->beSigned(*tom);    forma->beSigned(*john);
-
     try
     {
         tom->signForm(*forma);
@@ -35,7 +33,6 @@ int main()
     {
         std::cerr << e.who() << ": " << e.what() << std::endl;
     }
-    std::cout << *tom << std::endl;;
 
     try
     {
@@ -67,20 +64,8 @@ int main()
     std::cout << "************************" << std::endl;
     
     RobotomyRequestForm     *robot_form = new RobotomyRequestForm("ROBO_FORM");
-    robot_form->beSigned(*tom);
-    robot_form->beSigned(*john);
-    try
-    {
-        while (tom->get_grade() > 40)
-            tom->grade_increment();
-    }
-    catch (Bureaucrat::GradeTooLowException &e)
-    {
-        std::cerr << e.who() << ": " << e.what() << std::endl;
-    }
-    
     std::cout << *robot_form << std::endl;
-    std::cout << *tom << std::endl;
+    
     try
     {
         tom->signForm(*robot_form);
@@ -89,7 +74,16 @@ int main()
     {
         std::cerr << e.who() << ": " << e.what() << std::endl;
     }
-    std::cout << *john << std::endl;
+    
+    try
+    {
+        john->signForm(*robot_form);
+    }
+    catch (Bureaucrat::GradeTooLowException &e)
+    {
+        std::cerr << e.who() << ": " << e.what() << std::endl;
+    }
+        
     try
     {
         john->executeForm(*robot_form);
@@ -98,19 +92,29 @@ int main()
     {
         std::cerr << e.who() << ": " << e.what() << std::endl;
     }   
+    std::cout << "************************" << std::endl;
+    Bureaucrat  *tony = new Bureaucrat("tony", 1);
     try
     {
-        tom->executeForm(*robot_form);
-    }
+        tony -> signForm(*robot_form);
+    }    
+    catch (Bureaucrat::GradeTooLowException &e)
+    {
+        std::cerr << e.who() << ": " << e.what() << std::endl;
+    }   
+    try
+    {
+        tony -> executeForm(*robot_form);
+    }    
     catch (Form::GradeTooLowException &e)
     {
         std::cerr << e.who() << ": " << e.what() << std::endl;
     }   
-    std::cout << "************************" << std::endl;
 
     delete robot_form;
     delete john;
     delete forma;
     delete tom;
+    delete tony;
     return (0);
 }

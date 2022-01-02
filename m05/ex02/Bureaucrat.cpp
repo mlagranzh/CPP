@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:41:05 by celys             #+#    #+#             */
-/*   Updated: 2021/12/30 21:40:29 by celys            ###   ########.fr       */
+/*   Updated: 2022/01/02 11:41:01 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void	Bureaucrat::grade_increment()
 
 void Bureaucrat::signForm(Form &form)
 {
+    form.beSigned(*this);
     if (form.get_signed())
         std::cout << *this << "He can sign " << form << std::endl;
     else
@@ -132,6 +133,6 @@ std::ostream& operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 }
 void Bureaucrat::executeForm(Form const & form)
 {
-    std::cout << *this << " executes " << form << std::endl;
+    std::cout << *this << "He executes " << form << std::endl;
     form.execute(*this);
 }

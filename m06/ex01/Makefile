@@ -1,8 +1,8 @@
-NAME		=	Form
-HEADER		=	Bureaucrat.hpp Form.hpp
+NAME		=	Serialization
+HEADER		=	
 
 CPP			=	c++ -Wall -Wextra -Werror -std=c++98
-SRCS		=	main.cpp Bureaucrat.cpp Form.cpp
+SRCS		=	main.cpp 
 OBJ			=	$(SRCS:.cpp=.o)
 
 all: $(NAME)

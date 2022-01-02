@@ -1,8 +1,8 @@
-NAME		=	Bureaucrat
-HEADER		=	Bureaucrat.hpp
+NAME		=	ScalarСonversion
+HEADER		=	ScalarСonversion.hpp
 
 CPP			=	c++ -Wall -Wextra -Werror -std=c++98
-SRCS		=	main.cpp Bureaucrat.cpp
+SRCS		=	main.cpp ScalarСonversion.cpp
 OBJ			=	$(SRCS:.cpp=.o)
 
 all: $(NAME)

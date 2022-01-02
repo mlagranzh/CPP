@@ -6,17 +6,17 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 00:52:50 by celys             #+#    #+#             */
-/*   Updated: 2021/12/29 23:34:01 by celys            ###   ########.fr       */
+/*   Updated: 2022/01/02 11:43:22 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : Form("RobotomyRequestForm", 25, 5)
+RobotomyRequestForm::RobotomyRequestForm() : Form("RobotomyRequestForm", 72, 45)
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form(target, 25, 5)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form(target, 72, 45)
 {
 }
 
