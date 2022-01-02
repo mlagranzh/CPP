@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/31 07:06:30 by celys            ###   ########.fr       */
+/*   Updated: 2022/01/02 13:42:40 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 {
     if (argc != 2)
     {
-        std::cout << "NEED 2 ARGUMENTS!" << std::endl;
+        std::cout << "NEED ARGUMENTS!" << std::endl;
         return (0);
     }
     std::string str(argv[1]);

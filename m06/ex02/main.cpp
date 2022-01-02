@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2021/12/31 07:53:12 by celys            ###   ########.fr       */
+/*   Updated: 2022/01/02 13:45:27 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ void identify(Base* p)
         std::cerr << "This is class A" << '\n';
         (void) a;
     }
-    catch(const std::exception& e)
-    {
-    }    
+    catch(const std::exception& e){}
 
     try
     {
@@ -43,24 +41,20 @@ void identify(Base* p)
         std::cerr << "This is class B" << '\n';
         (void) a;
     }
-    catch(const std::exception& e)
-    {
-    }    
-
+    catch(const std::exception& e){}
     try
     {
         C& a = dynamic_cast<C&>(*p);
         std::cerr << "This is class C" << '\n';
         (void) a;
     }
-    catch(const std::exception& e)
-    {
-    }    
+    catch(const std::exception& e){}
 }
 
 int main()
 {
     Base *ptr;
+
     ptr = generate();
     identify(ptr);
     return (0);

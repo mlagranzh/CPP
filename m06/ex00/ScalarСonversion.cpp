@@ -6,37 +6,29 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:41:05 by celys             #+#    #+#             */
-/*   Updated: 2021/12/31 07:09:52 by celys            ###   ########.fr       */
+/*   Updated: 2022/01/02 13:43:28 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarСonversion.hpp"
 
-ScalarСonversion::ScalarСonversion()
-{
-    
-}
+ScalarСonversion::ScalarСonversion() {}
 
-ScalarСonversion::~ScalarСonversion()
-{
-    
-}
+ScalarСonversion::~ScalarСonversion() {}
 
 ScalarСonversion::ScalarСonversion(std::string string)
 {
-    // int i = -1;
-    // if (!(string == "+inf" || string == "-inf" || \
-    //          string == "inf" || string == "nan"))
-    // {
-    //     while (string[++i])
-    //     {
-    //         if (string[i] == '.')
-    //             break;
-    //         if (!isdigit(string[i]))
-    //             throw std::invalid_argument("STRING");
-    //     }
-    // }
     this -> string = string;
+}
+
+ScalarСonversion::ScalarСonversion(const ScalarСonversion &scalar) : string(scalar.string) {}
+
+ScalarСonversion& ScalarСonversion::operator=(const ScalarСonversion &scalar)
+{
+    if (this != &scalar)
+        this -> string = scalar.string;
+
+    return (*this);
 }
 
 ScalarСonversion::ScalarСonversion::operator double() const
@@ -65,7 +57,7 @@ ScalarСonversion::ScalarСonversion::operator float() const
 
 ScalarСonversion::operator char() const
 {
-    char ch;
+    int ch;
     
     if (string.size() == 1)
         return (string[0]);

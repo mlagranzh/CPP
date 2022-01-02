@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
-/*   Updated: 2021/12/31 07:30:51 by celys            ###   ########.fr       */
+/*   Updated: 2022/01/02 13:42:22 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,5 @@ class ScalarСonversion
         void print_float() const;
         void print_double() const;
         void print_int() const;
-
 };
 #endif

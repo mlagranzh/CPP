@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Array.hpp                                          :+:      :+:    :+:   */
+/*   mutantstack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 06:18:18 by celys             #+#    #+#             */
-/*   Updated: 2022/01/02 06:19:44 by celys            ###   ########.fr       */
+/*   Updated: 2022/01/02 14:22:35 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-class Array 
+#ifndef MUTANTSTACK_HPP
+#define MUTANTSTACK_HPP
+
+#include <iostream>
+#include <stack>
+
+class MutantStack 
 {
-    Array();
-    Array(unsigned int);
-    Array(Array &array);
-    Array operator=(Array &array);
+    MutantStack();
+    MutantStack(unsigned int);
+    ~MutantStack();
+    MutantStack(MutantStack &array);
+    MutantStack operator=(MutantStack &array);
     
-    ~Array();
     
 };
+
+#endif
