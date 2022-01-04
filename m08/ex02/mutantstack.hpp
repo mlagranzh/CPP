@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 06:18:18 by celys             #+#    #+#             */
-/*   Updated: 2022/01/02 14:35:39 by celys            ###   ########.fr       */
+/*   Updated: 2022/01/04 06:31:50 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,29 @@
 
 #include <iostream>
 #include <stack>
+#include <list>
 
 template <typename T>
-class MutantStack 
-{
-    private:
-        unsigned int size;
-    
+class MutantStack : public std::stack<T>
+{    
     public:
-        MutantStack();
-        MutantStack(unsigned int);
-        ~MutantStack();
-        MutantStack(MutantStack &array);
-        MutantStack operator=(MutantStack &array);
-        
-        unsigned int size();
-        void push(T element);
-        T top();
+        MutantStack() : std::stack<T>(){};
+        ~MutantStack() {};
+        MutantStack(MutantStack &array) : std::stack<T>(array){};
+        MutantStack operator=(MutantStack &array) 
+        {            
+            if (this == &array)
+                return (*this);
+            std::stack<T>::operator=(array);
+            return (*this);
+        };
+		typedef	T*	iterator;
+        iterator begin()
+        {
+			return (&this->top() - this -> size() + 1);
+        };
+		iterator end() { return (&this->top() + 1); }
+
 };
 
 #endif

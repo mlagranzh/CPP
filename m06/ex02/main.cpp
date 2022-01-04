@@ -57,7 +57,7 @@ void identify(Base* p)
     A *ptr_1 = dynamic_cast<A*>(p);
     if (ptr_1 != NULL)
     {
-        std::cout << "This is class C" << '\n';
+        std::cout << "This is class A" << '\n';
         return ;
     }
     B *ptr_2 = dynamic_cast<B*>(p);

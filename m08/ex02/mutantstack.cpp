@@ -6,37 +6,48 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 14:22:53 by celys             #+#    #+#             */
-/*   Updated: 2022/01/02 14:36:15 by celys            ###   ########.fr       */
+/*   Updated: 2022/01/03 19:50:17 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mutantstack.hpp"
 
-MutantStack::MutantStack()
-{
+// template<typename T>
+// MutantStack<T>::MutantStack()
+// {
     
-}
+// }
 
-MutantStack::MutantStack(unsigned int number)
-{
+// template<typename T>
+// MutantStack<T>::~MutantStack()
+// {
     
-}
+// }
 
-MutantStack::~MutantStack()
-{
+// template <typename T>
+// typename MutantStack<T>::iterator	MutantStack<T>::begin(void)
+// {
+//     return this->c.begin();
+// }
+
+// template <class T>
+// MutantStack::MutantStack(MutantStack &array)
+// {
     
-}
+// }
 
-MutantStack::MutantStack(MutantStack &array)
-{
+// template <class T>
+// MutantStack MutantStack::operator=(MutantStack &array)
+// {
     
-}
+// }
 
-MutantStack MutantStack::operator=(MutantStack &array)
-{
+// iterator begin()
+// {
     
-}
+// }
 
-unsigned int MutantStack::size();
-void MutantStack::push(T element);
-T MutantStack::top();
+// iterator end()
+// {
+    
+// }

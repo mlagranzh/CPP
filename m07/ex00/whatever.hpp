@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
-/*   Updated: 2022/01/02 05:08:24 by celys            ###   ########.fr       */
+/*   Updated: 2022/01/03 17:38:23 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 template<typename T>
 T min(T a, T b)
 {
-    if (a  < b) return a;
+    if (a < b) return a;
     return b;
 }
 

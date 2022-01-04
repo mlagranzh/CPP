@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 06:18:18 by celys             #+#    #+#             */
-/*   Updated: 2022/01/02 07:14:10 by celys            ###   ########.fr       */
+/*   Updated: 2022/01/03 17:48:14 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,50 +19,49 @@ template <class T>
 class Array 
 {
     private:
-        T *_arr;
+        T *arr;
         int length;
     public:
         Array()
         {
-            _arr = new T();
-            length = 0;
+            this -> arr = new T();
+            this -> length = 0;
         };
         Array(unsigned int a) 
         {
-            _arr = new T[a];
-            length = a;
+            this -> arr = new T[a];
+            this -> length = a;
         };
         ~Array()
         {
-            delete[] _arr;
+            delete[] this -> arr;
         };
         Array(Array &array)
         {
-            // delete[] _arr;
-            _arr = new T[array.size()];
+            this -> arr = new T[array.size()];
             for (int i = 0; i < array.size(); i++)
-                _arr[i] = array[i];
-            length = array.size();
+                this -> arr[i] = array[i];
+            this -> length = array.size();
         };
         Array operator=(Array &array)
         {
-            // delete[] _arr;
-            _arr = new T[array.size()];
+            delete[] this -> arr;
+            this -> arr = new T[array.size()];
             for (int i = 0; i < array.size(); i++)
-                _arr[i] = array[i];
-            length = array.size();
+                this -> arr[i] = array[i];
+            this -> length = array.size();
 
             return (*this);
         };
         T& operator[](int index)
         {
-            if (index > length - 1 || index < 0)
+            if (index > this -> length - 1 || index < 0)
                 throw std::logic_error("INDEX OUT OF RANGE!");
-            return _arr[index];
+            return this -> arr[index];
         };
         int size() const
         {
-            return (length);
+            return (this -> length);
         };
 };
 
