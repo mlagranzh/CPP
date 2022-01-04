@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 19:22:54 by celys             #+#    #+#             */
-/*   Updated: 2022/01/02 08:18:52 by celys            ###   ########.fr       */
+/*   Updated: 2022/01/04 15:00:36 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,11 @@
 template<typename T>
 int easyfind(T a, int number)
 {
-    int i = 0;
     typename T::iterator it;
-    for (it = a.begin(); it != a.end(); ++it)
-    {
-        if (number == *it)
-            return i;
-        i++;
-    }
-    throw std::logic_error("NOT FOUND");
+    it = std::find(a.begin(), a.end(), number);
+	if (it == a.end())
+		throw std::logic_error("NOT FOUND");
+	return std::distance(a.begin(), it);
 }
 
 

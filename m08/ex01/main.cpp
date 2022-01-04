@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 00:15:55 by celys             #+#    #+#             */
-/*   Updated: 2022/01/02 14:19:29 by celys            ###   ########.fr       */
+/*   Updated: 2022/01/04 15:00:58 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ int main()
     }
 
     std::cout << "********************************" << std::endl;
-    std::vector<int> v(1000);
+    std::vector<int> v(10000);
     srand (time(NULL));
-    for (int i = 0; i < 1000; i++)
+    for (int i = 0; i < 10000; i++)
         v[i] = rand();
         
 
-    Span sp2 = Span(1000);
+    Span sp2 = Span(10000);
 
     try
     {
