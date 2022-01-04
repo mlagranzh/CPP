@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 04:44:59 by celys             #+#    #+#             */
-/*   Updated: 2022/01/04 06:42:18 by celys            ###   ########.fr       */
+/*   Updated: 2022/01/04 07:10:55 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int main()
     
     std::cout << mstack.size() << std::endl;
     
+    std::cout << "************************" << std::endl;
     mstack.push(3);
     mstack.push(5);
     mstack.push(737);
@@ -49,22 +50,23 @@ int main()
     std::cout << "************************" << std::endl;
     std::list<int> list;
     
-    list.push_front(5);
-    list.push_front(17);
+    list.push_back(5);
+    list.push_back(17);
     
     std::cout << *list.begin() << std::endl;
     
-    list.pop_front();
+    list.pop_back();
     
     std::cout << list.size() << std::endl;
     
-    list.push_front(3);
-    list.push_front(5);
-    list.push_front(737);
-    list.push_front(3);
-    list.push_front(5);
-    list.push_front(737);
-    list.push_front(0);
+    std::cout << "************************" << std::endl;
+    list.push_back(3);
+    list.push_back(5);
+    list.push_back(737);
+    list.push_back(3);
+    list.push_back(5);
+    list.push_back(737);
+    list.push_back(0);
     
     std::list<int>::iterator it2 = list.begin();
     std::list<int>::iterator ite2 = list.end();
